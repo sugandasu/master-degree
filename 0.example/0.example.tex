@@ -1,28 +1,57 @@
 \documentclass[a4paper,12pt]{article}
+\usepackage{geometry}
+\geometry{margin=0.5in}
 
-\title{Example}
+\title{Low cost GAN depth estimation for 3D object modeling}
 \author{Arif Suganda}
 \date{\today}
 
 \begin{document}
-\maketitle
-\pagenumbering{roman}
-\tableofcontents
-\newpage
-\pagenumbering{arabic}
+
+\twocolumn[
+    \begin{@twocolumnfalse}
+        \maketitle
+        \begin{abstract}
+            Depth estimation, one of the leading research in computer vision, from autonomous driving to 3D modeling, play key role to artifical perception of the machine.
+            This paper present reconstruction of 3D object with the optimal cost for accuracy, using simple Generative Adversarial Network (GAN) on NYU Depth v2 and KITTI dataset.
+            Our approach in optimization achieved xx\% accuracy with only xx epochs training resulted in xx times yield.
+            We concluded this approach cost very inexpensive compared to other method.
+        \end{abstract}
+        % \textbf{Keywords:} depth estimation, artifical neural network, optimization, generative adversarial network
+    \end{@twocolumnfalse}
+]
+
 
 \section{Introduction}
-This is introduction
+Depth estimation (DE) research in robotic \cite{chang9010976}, a-utonomous driving, and 3d modeling has varied in result with overall accuracy consistently high.
+There are many approach explored by the current researches from optimizing hardware \cite{chang9010976}, improving dataset \cite{guizilini9156708}, and/or using new set of architecture \cite{guizilini9156708}, \cite{hendra10113647}.
+The common approach on the current research is using deep learning (DL) as primary architecture in research.
 
-\section{Methods}
-\subsection{Stage 1}
-\label{sec1}
-The first part of the methods
+DL is still the leading architecture model for monocular depth estimation (MDE) \cite{masomians22145353}.
+There are many variety used on MDE such as convolutional neural networks (CNNs), recurrent neural net-works (RNNs), 
+variational auto-encoders (VAEs) and generative adversarial networks (GANs) \cite{zhao101007}.
+Eigen et al. \cite{eigen14062283} are the pioneers for using CNN for MDE, by using local and global information from single image.
+GAN has become a hot research direction in recent years \cite{zhao101007}, commonly use generator to estimate global and local 3D structure, 
+and discriminator to predict depth of monocular image. GAN also varied in framework, such as stacked GAN, conditional GAN \cite{hendra10113647} and Cycle GAN \cite{zhao101007}.
 
-\subsection{Stage 2}
-The second part of the methods
+These varied method and framework still face a critical problem, 
+high economic cost to create data-sets with ground truth \cite{zhao101007}, and high cost of tra-ining.
+Our approach aims to create 3D object modeling and reduce the cost of training, optimizing cost to accuracy and error function using GAN architecture framework, 
+leveraging on GAN ability for capturing global structure with fewer training data than a standard en-coder-decoder CNN \cite{hendra10113647}.
 
-\section{Results}
-Here are my results. Refering to section \ref{sec1} on page \pageref{sec1}
+\section{Related Work}
+
+\section{Proposed Method}
+
+\section{Experiment}
+
+\section{Discussion}
+
+\section{Conclusion}
+
+\section{Acknowledgments}
+
+\bibliographystyle{plain}
+\bibliography{refs}
 
 \end{document}
