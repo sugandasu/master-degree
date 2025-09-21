@@ -12,4 +12,5 @@ All assignment
 | 4   | 20250827 |   DTMN | Explain code perline                                                                     |  done  |
 | 5   | 20250903 |   DTMN | Find classification and explain data trends                                              |  done  |
 | 6   | 20250902 |   ARCH | Database query estimation                                                                |  done  |
-| 7   | 20250910 |   DTMN | Analyzed Principal Component Analysis (PCA) and give an example using relevant journal   | start  |
+| 7   | 20250910 |   ETCH | Research title and possible misconduct                                                   | done  |
+| 8   | 20250910 |   DTMN | Analyzed Principal Component Analysis (PCA) and give an example using relevant journal   | start  |
