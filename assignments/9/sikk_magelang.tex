@@ -1,0 +1,98 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{hyperref}
+
+\author{Arif Suganda}
+\title{Analizing SIKK Magelang}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+SIKK Magelang is an application to track disaster in Magelang. 
+This application created by goverment agency for disaster relief (BKBD) Magelang city.
+
+\section{Discussion}
+
+\subsection{Features}
+\begin{enumerate}
+    \item Main features of SIKK Magelang are:
+        \begin{itemize}
+            \item Report disaster
+            \item Track disaster
+            \item View disaster history
+            \item View disaster statistics
+        \end{itemize}
+    
+
+    \item \textbf{Data completeness}.
+        Data completeness in SIKK Magelang is quite good, 
+        it covers various types of disasters such as residential fire, landslides, earthquakes, and others. 
+        The data also includes detailed information about the location, time, and impact of the disaster.
+
+        The impact of the disaster recorded including the number of casualties, injuries, and damage to property.
+        Damage to property only covers house, classified into low, middle, high.
+        Data completeness can be improved by adding more detailed information about monetary losses, infrastructure damage, environmental impact and social impact.
+
+        There are also data related to evacuation route from merapi volcano, to anticipate the eruption disaster.
+        Although the data does not have any information about route condition, and its revision throughout the years.
+    \item \textbf{Data filter}.
+        Data filter in SIKK Magelang consist of statistical filter by date, district, and type of disaster.
+        Data also can be filtered by marker on map. Zoom out map will show cluster marker, representing cluster of multiple disaster whithin proximity of each other. 
+        This cluster marker can be zoomed in to see individual disater location represented by map marker.
+
+        In the evacuation route map, the filter only consist of district selection, 
+        which will show evacuation route in the selected district, 
+        evacuation route to the nearest shelter, and level of danger zone.
+    \item \textbf{Data presentation}.
+        Data presentation in SIKK Magelang is shown using combination of table, statistic chart and map consist of disaster map and evacuation route map.
+        Table shows detailed information about disaster, including type of disaster, time, location, cause, crononology, casualties, picture, impact and other detail.
+        The charts and tables are interactive, allowing users to filter the data by date, district, and type of disaster.
+        
+        The disaster map provides a visual representation of the location of disasters, while the charts and tables provide more detailed information about the data.
+        The map is an interactive visualization, allowing users to zoom in and out and click on cluster marker and individual markers to detialed information about a disaster.
+        
+        The evacuation route map provides information about the evacuation routes in case of a disaster, including the nearest shelter and level of danger zone.
+        The map is also interactive, allowing users to zoom in and out and click on the shelter to see more detailed information, such as the address and capacity of the shelter and travel time to the shelter.
+    \item \textbf{Data source}.
+        SIKK Magelang does not not explicitly mention any disaster data source in the website.
+        However, it can be inferred that the data is collected from various sources, such as reports from local authorities, emergency services, and community members.
+        The data is likely verified and validated by BKBD Magelang before being added to the system.
+    \item \textbf{Data management}.
+        SIKK Magelang mention about the management of the website to BKBD Magelang.
+        It can be implied that the data management in SIKK Magelang must be handled by BKBD Magelang,
+        which likely includes data collection, verification, validation, and entry into the system.
+        The data is likely stored in a database, which is managed by BKBD Magelang.
+\end{enumerate}
+
+
+\subsection{Inteface Design}
+User interface in SIKK Magelang is simple and easy to use. Although the design is quite dated, using \href{https://getbootstrap.com/}{bootstap} as primary design, it is still functional and easy to navigate.
+The main page display statistics of disarter in Magelang with bar chart, line chart, classification of disaster by type, and casualties.
+The disaster map page display map with cluster marker and individual marker, with filter option on the left side of the page.
+The evacuation route map page display map with evacuation route, shelter, and danger zone, with filter
+The disaster data table page display table with pagination, search, and filter option on the top of the table.
+The menu is located on top of the website, redirecting to main page, and disaster map. 
+The evacuation route map shown in sub menu on product menu, and disaster data table shown in sub menu on data menu.
+
+\subsection{Accessibility}
+SIKK Magelang is a web-based application, accessible through any device with internet connection and web browser.
+The website is quite responsive to different screen sizes and resolutions, making it accessible on both desktop and mobile devices.
+However, the website does not have any specific accessibility feature for users with disabilities, such as screen reader support or keyboard navigation.
+
+\subsection{Realibility}
+SIKK Magelang should be a reliable application, as it is maintained by a government agency.
+The loading time of the website is quite fast, throughout my usage, I did not encounter any bugs or errors.
+
+\section{Proposed Development}
+Using my own experience using SIKK Magelang, there are several proposed development I would suggest:
+\begin{itemize}
+    \item Improve data completeness by adding more detailed information about monetary losses, infrastructure damage, environmental impact and social impact.
+    \item Implement feature to track response and relief efforts, such as the time taken to respond and the resources allocated for recovery.
+    \item Add more data filter options, such as filtering by impact severity, cause of disaster, and response time.
+    \item Improve data presentation by adding more interactive visualizations, such as heatmaps and timelines.
+    \item Implement a mobile application version of SIKK Magelang for easier access on mobile devices, and offline access for evacuation route.
+    \item Add accessibility features for users with disabilities, such as screen reader support and keyboard navigation.
+    \item Implement automated data collection methods, such as integrating with social media or using sensors to detect disasters in real-time.
+\end{itemize}
+
+\end{document}
