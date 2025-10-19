@@ -1,0 +1,32 @@
+\begin{thebibliography}{1}
+
+\bibitem{chang9010976}
+Julie Chang and Gordon Wetzstein.
+\newblock Deep optics for monocular depth estimation and 3d object detection.
+\newblock In {\em 2019 IEEE/CVF International Conference on Computer Vision (ICCV)}, pages 10192--10201, 2019.
+
+\bibitem{eigen14062283}
+David Eigen, Christian Puhrsch, and Rob Fergus.
+\newblock Depth map prediction from a single image using a multi-scale deep network, 2014.
+
+\bibitem{guizilini9156708}
+Vitor Guizilini, Rareș Ambruș, Sudeep Pillai, Allan Raventos, and Adrien Gaidon.
+\newblock 3d packing for self-supervised monocular depth estimation.
+\newblock In {\em 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pages 2482--2491, 2020.
+
+\bibitem{hendra10113647}
+Andi Hendra and Yasushi Kanazawa.
+\newblock Tp-gan: Simple adversarial network with additional player for dense depth image estimation.
+\newblock {\em IEEE Access}, 11:44176--44191, 2023.
+
+\bibitem{masomians22145353}
+Armin Masoumian, Hatem~A. Rashwan, Julián Cristiano, M.~Salman Asif, and Domenec Puig.
+\newblock Monocular depth estimation using deep learning: A review.
+\newblock {\em Sensors}, 22(14), 2022.
+
+\bibitem{zhao101007}
+ChaoQiang Zhao, QiYu Sun, ChongZhen Zhang, Yang Tang, and Feng Qian.
+\newblock Monocular depth estimation based on deep learning: An overview.
+\newblock {\em Science China Technological Sciences}, 63(9):1612–1627, June 2020.
+
+\end{thebibliography}
