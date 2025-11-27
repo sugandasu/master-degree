@@ -15,3 +15,4 @@
 !**/latex/*.pdf
 ./assignments/2/*
 journals/*.pdf
+*.pyc
