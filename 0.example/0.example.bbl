@@ -1,32 +1,87 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{chang9010976}
 Julie Chang and Gordon Wetzstein.
 \newblock Deep optics for monocular depth estimation and 3d object detection.
 \newblock In {\em 2019 IEEE/CVF International Conference on Computer Vision (ICCV)}, pages 10192--10201, 2019.
 
+\bibitem{dong2021mobilexnetefficientconvolutionalneural}
+Xingshuai Dong, Matthew~A. Garratt, Sreenatha~G. Anavatti, and Hussein~A. Abbass.
+\newblock Mobilexnet: An efficient convolutional neural network for monocular depth estimation, 2021.
+
 \bibitem{eigen14062283}
 David Eigen, Christian Puhrsch, and Rob Fergus.
 \newblock Depth map prediction from a single image using a multi-scale deep network, 2014.
+
+\bibitem{Godard2017Monodepth}
+Clément Godard, Oisin Mac~Aodha, and Gabriel~J. Brostow.
+\newblock Unsupervised monocular depth estimation with left–right consistency.
+\newblock In {\em IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 2017.
 
 \bibitem{guizilini9156708}
 Vitor Guizilini, Rareș Ambruș, Sudeep Pillai, Allan Raventos, and Adrien Gaidon.
 \newblock 3d packing for self-supervised monocular depth estimation.
 \newblock In {\em 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pages 2482--2491, 2020.
 
+\bibitem{Hao2023GAN}
+Shengang Hao, Li~Zhang, Kefan Qiu, and Zheng Zhang.
+\newblock Conditional generative adversarial network for monocular image depth map prediction.
+\newblock {\em Electronics}, 12(5), 2023.
+
 \bibitem{hendra10113647}
 Andi Hendra and Yasushi Kanazawa.
 \newblock Tp-gan: Simple adversarial network with additional player for dense depth image estimation.
 \newblock {\em IEEE Access}, 11:44176--44191, 2023.
+
+\bibitem{Isola2018CGan}
+Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, and Alexei~A. Efros.
+\newblock Image-to-image translation with conditional adversarial networks, 2018.
+
+\bibitem{khan20082272}
+Faisal Khan, Saqib Salahuddin, and Hossein Javidnia.
+\newblock Deep learning-based monocular depth estimation methods—a state-of-the-art review.
+\newblock {\em Sensors}, 20(8), 2020.
+
+\bibitem{lee2021bigsmallmultiscalelocal}
+Jin~Han Lee, Myung-Kyu Han, Dong~Wook Ko, and Il~Hong Suh.
+\newblock From big to small: Multi-scale local planar guidance for monocular depth estimation, 2021.
 
 \bibitem{masomians22145353}
 Armin Masoumian, Hatem~A. Rashwan, Julián Cristiano, M.~Salman Asif, and Domenec Puig.
 \newblock Monocular depth estimation using deep learning: A review.
 \newblock {\em Sensors}, 22(14), 2022.
 
+\bibitem{Silberman2012NYU}
+Nathan Silberman, Derek Hoiem, Pushmeet Kohli, and Rob Fergus.
+\newblock Indoor segmentation and support inference from rgbd images.
+\newblock In {\em European Conference on Computer Vision (ECCV)}, 2012.
+
+\bibitem{Wofk2019FastDepth}
+Diana Wofk, Fangchang Ma, Tien-Ju Yang, Sertac Karaman, and Vivienne Sze.
+\newblock Fastdepth: Fast monocular depth estimation on embedded systems.
+\newblock In {\em IEEE International Conference on Robotics and Automation (ICRA)}, 2019.
+
+\bibitem{Zhang2018GANDepth}
+Xiaofeng Zhang, Shuo Chen, Qingyang Xu, and Xiaoxue Zhang.
+\newblock Monocular image depth estimation using a conditional generative adversarial net.
+\newblock In {\em 2018 37th Chinese Control Conference (CCC)}, pages 9176--9180, 2018.
+
+\bibitem{zhang2019patternaffinitivepropagationdepthsurface}
+Zhenyu Zhang, Zhen Cui, Chunyan Xu, Yan Yan, Nicu Sebe, and Jian Yang.
+\newblock Pattern-affinitive propagation across depth, surface normal and semantic segmentation, 2019.
+
 \bibitem{zhao101007}
 ChaoQiang Zhao, QiYu Sun, ChongZhen Zhang, Yang Tang, and Feng Qian.
 \newblock Monocular depth estimation based on deep learning: An overview.
 \newblock {\em Science China Technological Sciences}, 63(9):1612–1627, June 2020.
+
+\bibitem{Zhou2017Unsupervised}
+Tinghui Zhou, Matthew Brown, Noah Snavely, and David~G. Lowe.
+\newblock Unsupervised learning of depth and ego-motion from video.
+\newblock In {\em IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 2017.
+
+\bibitem{zhou2017unsupervisedlearningdepthegomotion}
+Tinghui Zhou, Matthew Brown, Noah Snavely, and David~G. Lowe.
+\newblock Unsupervised learning of depth and ego-motion from video, 2017.
 
 \end{thebibliography}
