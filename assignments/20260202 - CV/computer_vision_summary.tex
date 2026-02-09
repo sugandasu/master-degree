@@ -1,0 +1,95 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{fontspec}
+\usepackage{setspace}
+\usepackage{biblatex}
+
+\setmainfont{arial}
+\setstretch{1.15}
+\addbibresource{references.bib}
+
+\title{Computer Vision and Its Implementation on Monocular Depth Estimation, a Summary}
+\author{Arif Suganda\\
+        Tadulako University\\
+        \texttt{f552530002@untad.ac.id}}
+\date{2026--01--08}
+
+\begin{document}
+
+\maketitle
+
+\section{Computer Vision}
+
+Computer vision is a subfield of artificial intelligence (AI) focused on training the machine to interpret and understand the visual world by mimicking the how the human see.
+Using digital image from cameras and videos, computer vision aims to make a machine accurately indentify, classify and understand the objects, scenes and the world, then react to the what they ``see''.
+Different from human to sees the world with their eye \(s\) and process the image with their brain, a computer sees the world using variety of sensors, mostly using a camera as the main sensor to capture the image as grid of pixel which have values and process it in the CPU\@.
+These pixel consist mostly on red, green, and blue (RGB) value which determined the color of each pixel.
+These ``seeing'' process in computer vision can generally separated into 4 steps:
+\begin{enumerate}
+        \item Image aquisition: capturing raw image data using some kind of sensors.
+        \item Preprocessing: cleaning the captured data (noise reduction, constrast enhancement) to increase the visibility of it's features.
+        \item Feature extraction: using algorithms to detect ``low level'' features such as texture, edge, and corners.
+        \item High-level understanding: using more algorithms to indentify, classify, and understand the concept exist within the image such as ``car'', ``tree'' and ``mountain''.
+\end{enumerate}
+
+These understanding process primarily focused on a ``flat'' interpretation of the image.
+It focused on 2D recognition of the image such as object detections, scene interpretation and object indentification.
+These understanding processes reduce the real interpretation of the world as we know it, that is the spatial information of the world.
+
+To operate in the real world such as the impelementation of robotic and automation system, the computer must first understand the spatial context of the world.
+While human can easily recognize the spatial information using perpective and object size, computers have zero knowledge and understanding about it, especialy if the information captured only a 2D image of the world.
+This has led the field of computer vision evolving from 2D recognition to 3D scene understanding of the world.
+
+\section{3D Understanding}
+
+Computer understanding of spatial context is called ``depth information'', and it have been solved by relying on hardware-heavy solution such as LiDAR (Light Detection and Ranging) and Time-of-Flight (ToF) sensors.
+While these hardware solutions are accurate, it is expensive, bulky and consume a huge number of power. 
+Just as humans see the spatial information using our eyes and brain, do computers can also learn about this knowledge using only image cues, these research topic is called depth estimation (DE).
+
+Depth estimation (DE) is a traditional computer vision task that predicts depth from one or more two-dimensional (2D) images~\cite{Masoumian2022MDEReview}.
+DE can be functionally classified into three divisions, including monocular depth estimation (MDE), binocular depth estimation (BDE), or multi-view depth estimation (MVDE)~\cite{Masoumian2022MDEReview}.
+The earlier research of depth estimation focused heavily on stereo vision, inspired by human binocular perception.
+Stereo vision works by estimating the depth from disparities between two calibrated cameras~\cite{Zhang2025MDESurvey}.
+While Multi-view methods acquire depth information by utilising visual cues and different camera parameters~\cite{Khan2020MDEReview}.
+
+Implementation of stereo and multi-view required a high computational time, memory and cost due to the usage of multiple sensors and processes.
+These requirements have limit their practicality and implementation in application~\cite{Khan2020MDEReview,Masoumian2022MDEReview}, this leaves us with monocular depth estimation (MDE) approach.
+
+\section{Monocular Depth Estimation}
+
+Monocular depth estimation from Red-Green-Blue (RGB) images is a well-stud-ied ill-posed problem in computer vision which has been investigated intensively over the past decade using Deep Learning (DL) approaches~\cite{Khan2020MDEReview}.
+Ill-posed problem in MDE means that there are no concrete solution to solve a depth estimation using only single image, because there are no references to determined the solution of MDE problem.
+
+MDE research is heavily dominated by deep learning (DL) model~\cite{Masoumian2022MDEReview}. Since eigen~\cite{eigen14062283}, convolutional neural networks (CNNs) have been the primary architecture used in depth estimation, there are also variety architecture such as encoder-decoder model, residual networks, generative adversarial model and transformer-based model.
+DL implementation in MDE research can be catorized into 3 approach: supervised, unsupervised and semi-supervised learning.
+
+\subsection{Supervised}
+
+Supervised methods is based on the ground truth of depth maps, so that monocular depth estimation can be regarded as a regressive problem~\cite{Zhao2020MDEDLOverview}.
+MDE implementations using supervised approach has use a variety of architecture, such as~\cite{Zhao2020MDEDLOverview}:
+\begin{enumerate}
+        \item Scale-invariant approach by eigen~\cite{eigen14062283}.
+        \item Residual learning architecture to learn mapping relation between depth maps and single images~\cite{Zhao2020MDEDLOverview}.
+        \item Improvement in loss function using reverse Huber (Berhu) loss function.
+        \item Using pacing increasing discretization (SID) strategy to to discretize depth and optimize the training process.
+        \item Lightweight auto-encoder network framework, and network pruning to reduce computational complexity and improves realtime performance.
+        \item Conditional random field (CRM) using the depth information from the neighboring pixels to estimate the depth of an image.
+        \item Using an adversarial network to estimate the depth of an image using the generator network and discriminator network used to distinguish the predicted depth from the ground truth. 
+\end{enumerate}
+
+Supervised has been consistently produce a high accuracy model, however it also suffers from the lack of ground truth and labeled data, which is hard and expensive to acquire.
+
+\subsection{Unsupervised}
+
+The unsupervised methods are trained by monocular image sequences, and the geometric constraints are built on the projection between neighboring frames~\cite{Zhao2020MDEDLOverview}.
+These methods use the predicted reconstuction image to determined the depth estimation of an image.
+Unsupervised methods However, suffer from scale ambiguity, scale inconsistency, occlusions and other problems~\cite{Zhao2020MDEDLOverview}.
+
+\subsection{Semi-supervised}
+
+Semi-supervised method rely on few additional trainer or references such as binocular image, knowledge distilation and synthetic data.
+Using binocular data semi-supervised method match the stereo image to acieve a better performance than traditional training, 
+Knowledge distilation consist of a teacher network and student network, which transfer the knowledge learned by the large teacher network to the smaller and faster student model.
+Synthetic data works using adversarial network to populate the dataset for training purpose, hereby achieving competitive results.
+\printbibliography{}
+
+\end{document}
