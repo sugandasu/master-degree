@@ -1,0 +1,89 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{fontspec}
+\usepackage{setspace}
+\usepackage{biblatex}
+
+\setmainfont{arial}
+\setstretch{1.15}
+\addbibresource{references.bib}
+
+\title{Artificial Intelligence, Machine Learning and Deep Learning}
+\author{Arif Suganda\\
+        Tadulako University\\
+        \texttt{f5522530002@untad.ac.id}
+}
+
+\begin{document}
+\maketitle
+
+\section{Artifial Intelligence}
+
+Artificial intelligence (AI) is the capability of computational system to perform task mimicking human intelligence and cognitive function.
+These capabilities includes task such as learning, reasoning, and problem solving, which is divided into three main categories of AI, namely:
+\begin{enumerate}
+    \item Artificial Narrow Intelligence (ANI)
+    \item Artificial General Intelligence (AGI)
+    \item Artificial Super Intelligence (ASI)
+\end{enumerate}
+
+The difference between the three is that ANI has limited capabilities, restricted into one specialty.
+The example of ANI is the ASI listed in the cancer detection advacement~\cite{Darbandi2026Cancer}, the scope of this AI limited only for breast cancer.
+While AGI and ASI is much more advance than ANI, AGI has the capability of a normal human by the combination of multiple agent for many different cases and ASI is know as super intelligence surpasing any human.
+AGI and ASI currently does not exist in any form yet, but the research in this field is still ongoing~\cite{ibm_ai_comparison}.
+
+So how does the computer achieve these capabilities? 
+The process of acquiring these knowledge is called machine learning, which revolutionized the way we train the computer today to learn from available data.
+
+\section{Machine Learning}
+
+Machine learning (ML) is a subset artificial intelligence used to train a computer to learn, generalize and acquire intuition from data.
+The model created in this training then can be used as a references to help with the decision maker.
+There are many technique that can be used by machine learning, such as:
+\begin{enumerate}
+    \item Linear regression
+    \item Bayesian Logic
+    \item Support vector machine
+    \item Deep learning
+\end{enumerate}
+
+Machine learning works by using data as learning source, forming intuition, generalization and adapting to the dataset.
+For example the usage of multiple machine learning technique for text classification presented in the survey~\cite{Rady2024}.
+In the recent years, machine learning has been heavily dominated by deep learning approach, which inspired by the working of the human brain.
+
+\section{Deep Learning}
+
+Deep learning (DL) is a specialized subset of machine learning, using deeply connected neural network to perform task such as classification, regression and representation learning.
+Word ``deep'' refers to the number of layers that the network employs to learn from the dataset, ranging from three to several hundred or thousands.
+
+Deep learning works by clustering the feature found in the data into the interconnected layer and weight in the network.
+The clustering process is nearly imposible to interpret or explain, because of this DL often called a blackbox method~\cite{ibm_ai_comparison}.
+To understand DL, we can start with understanding the component of neural network, namely:
+\begin{enumerate}
+    \item Input, used as starting value from the data.
+    \item Weight, used to store the adaptive knowledge of the network.
+    \item Activation function, used to process the connection of the network and detemined the active connection.
+    \item Loss function, used to calculate the rate of error in the network and propagate the value to the weight of the network.
+    \item Backpropagation, used to propagate the loss function to adapt the weight and update it into a new value.
+\end{enumerate}
+
+Components above working in large network somehow able to adapting to the dataset and found an intricate pattern within the data, then able to adapt and produce an acceptable result.
+For example eigen~\cite{eigen14062283} dwelve into depth estimation using deep learning model called convolutional neural network (CNN), although it has an acceptable accuracy, the reseacher still had a hard time to figure how the model works.
+
+\section{Discussion}
+
+The difference between three concept above is in their concept and scope.
+Artifial intelligence is an result of learning, machine learning is the theoretical process and deep learning is the learning technique.
+Deep learning is a subset of machine learning, machine learning is a subset of artificial intelligence.
+
+\section{Implementation}
+
+AI especially using deep learning can be implemented in a few key problem within the university, namely:
+\begin{enumerate}
+    \item Attendance, using deep learning to implement face recognition.
+    \item Cheater detection, using deep learning to take a realtime video as an input to detect movement that indicate cheating.
+    \item AI academic chatbot, using deep learning to create a chatbot to help students or staffs to navigate academic activity in the university.
+\end{enumerate}
+
+\printbibliography{}
+
+\end{document}
