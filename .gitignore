@@ -16,3 +16,6 @@
 ./assignments/2/*
 journals/*.pdf
 *.pyc
+assignments/**/*.run.xml
+assignments/**/*.pdf
+assignments/**/*.bcf
