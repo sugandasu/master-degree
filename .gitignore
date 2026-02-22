@@ -19,3 +19,5 @@ journals/*.pdf
 assignments/**/*.run.xml
 assignments/**/*.pdf
 assignments/**/*.bcf
+.venv
+__pycache__
