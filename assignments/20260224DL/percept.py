@@ -3,8 +3,8 @@ import numpy as np
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
-def sigmoid_derivative(x):
-    return x * (1 - x)
+def sigmoid_derivative(z):
+    return sigmoid(z) * (1 - sigmoid(z))
 
 def calculate_layer(inputs, weights, bias):
     sum_ = np.dot(inputs, weights)
@@ -21,7 +21,7 @@ def calculate_loss(y_true, y_pred):
 def calculate_delta(y_true, y_pred):
     return  y_pred - y_true
 
-def train(X, y, layers, epochs=200, lr=1):
+def train(X, y, layers, epochs=5000, lr=1):
     n_layers = len(layers)
     i_bias = 1
     i_weight = 0
@@ -31,9 +31,11 @@ def train(X, y, layers, epochs=200, lr=1):
         # Forward
         current_input = X
         layers_output = [X]
+        layers_sum = [X]
         
-        for layer in layers:
-            _, current_input = calculate_layer(current_input, layer[i_weight], layer[i_bias])
+        for (i, layer) in enumerate(layers):
+            current_sum, current_input = calculate_layer(current_input, layer[i_weight], layer[i_bias])
+            layers_sum.append(current_sum)
             layers_output.append(current_input)
 
         # Backpropagation
@@ -47,7 +49,7 @@ def train(X, y, layers, epochs=200, lr=1):
         # Hidden layer propagation
         for j in range(n_layers - 1, 0, -1):
             weight = delta.dot(layers[j][i_weight].T)
-            delta = weight * sigmoid_derivative(layers_output[j])
+            delta = weight * sigmoid_derivative(layers_sum[j])
             d_layers_output.append(delta)
         d_layers_output.reverse()
         
