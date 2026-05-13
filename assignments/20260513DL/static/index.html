@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WILD</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f0f2f5;
+        color: #1a1a1a;
+        min-height: 100vh;
+      }
+
+      /* NAV */
+      nav {
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 32px;
+        height: 56px;
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: 700;
+        color: #e53e3e;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        font-size: 14px;
+        color: #374151;
+      }
+
+      .nav-links a:hover {
+        color: #111;
+      }
+
+      /* MAIN */
+      main {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 24px;
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 24px;
+        align-items: start;
+      }
+
+      /* CARDS */
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+      }
+
+      .card-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #111827;
+        margin-bottom: 16px;
+      }
+
+      /* PREVIEW */
+      .preview-area {
+        width: 100%;
+        aspect-ratio: 4/3;
+        background: #f3f4f6;
+        border: 1.5px dashed #d1d5db;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .preview-area img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: none;
+      }
+
+      .preview-placeholder {
+        color: #9ca3af;
+        font-size: 14px;
+      }
+
+      .scroll-bar {
+        margin-top: 8px;
+        height: 4px;
+        background: #e5e7eb;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .scroll-bar-inner {
+        height: 100%;
+        width: 30%;
+        background: #d1d5db;
+        border-radius: 2px;
+      }
+
+      /* FILE INPUT ROW */
+      .file-input-row {
+        display: flex;
+        align-items: center;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        overflow: hidden;
+        margin-bottom: 16px;
+        background: #fff;
+      }
+
+      .file-btn {
+        padding: 9px 14px;
+        background: #f9fafb;
+        border: none;
+        border-right: 1px solid #d1d5db;
+        font-size: 13px;
+        color: #374151;
+        cursor: pointer;
+        white-space: nowrap;
+        font-family: inherit;
+      }
+
+      .file-btn:hover {
+        background: #f3f4f6;
+      }
+
+      .file-name-text {
+        padding: 9px 12px;
+        font-size: 13px;
+        color: #9ca3af;
+        flex: 1;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+
+      /* PREDICT BUTTON */
+      .btn-predict {
+        width: 100%;
+        padding: 13px;
+        background: #2563eb;
+        border: none;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.15s;
+        margin-bottom: 16px;
+        font-family: inherit;
+      }
+
+      .btn-predict:hover {
+        background: #1d4ed8;
+      }
+      .btn-predict:active {
+        background: #1e40af;
+      }
+      .btn-predict:disabled {
+        background: #93c5fd;
+        cursor: not-allowed;
+      }
+
+      /* RESULT BOX */
+      .result-box {
+        border: 1px solid #e5e7eb;
+        border-radius: 6px;
+        padding: 14px 16px;
+        background: #f9fafb;
+        min-height: 70px;
+      }
+
+      .result-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #111827;
+        margin-bottom: 4px;
+      }
+
+      .result-text {
+        font-size: 13px;
+        color: #6b7280;
+        margin-bottom: 4px;
+      }
+      .result-value {
+        font-size: 14px;
+        font-weight: 500;
+        color: #111827;
+      }
+      .result-value.fire {
+        color: #dc2626;
+      }
+      .result-value.no-fire {
+        color: #16a34a;
+      }
+
+      @media (max-width: 780px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="logo" href="#">WILD 🔥</a>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- LEFT: Image Preview -->
+      <div class="card">
+        <div class="card-title">Image Preview</div>
+        <div class="preview-area">
+          <img id="previewImg" alt="Preview" />
+          <div class="preview-placeholder" id="previewPlaceholder">
+            No image selected
+          </div>
+        </div>
+        <div class="scroll-bar"><div class="scroll-bar-inner"></div></div>
+      </div>
+
+      <!-- RIGHT: Upload & Predict -->
+      <div class="card">
+        <div class="card-title">Upload &amp; Predict</div>
+
+        <div class="file-input-row">
+          <button
+            class="file-btn"
+            onclick="document.getElementById('fileInput').click()"
+          >
+            Choose File
+          </button>
+          <input type="file" id="fileInput" accept="image/*" />
+          <span class="file-name-text" id="fileNameDisplay"
+            >No file chosen</span
+          >
+        </div>
+
+        <button class="btn-predict" id="predictBtn" onclick="predict()">
+          Predict Image
+        </button>
+
+        <div class="result-box">
+          <div class="result-label">Prediction Result:</div>
+          <div class="result-text" id="resultText"></div>
+          <div class="result-value" id="resultValue"></div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const fileInput = document.getElementById("fileInput");
+      const fileNameDisplay = document.getElementById("fileNameDisplay");
+      const previewImg = document.getElementById("previewImg");
+      const previewPlaceholder = document.getElementById("previewPlaceholder");
+      const predictBtn = document.getElementById("predictBtn");
+      const resultText = document.getElementById("resultText");
+      const resultValue = document.getElementById("resultValue");
+
+      let selectedFile = null;
+
+      fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        selectedFile = file;
+        fileNameDisplay.textContent = file.name;
+        fileNameDisplay.style.color = "#374151";
+
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          previewImg.src = ev.target.result;
+          previewImg.style.display = "block";
+          previewPlaceholder.style.display = "none";
+        };
+        reader.readAsDataURL(file);
+
+        resultText.textContent = "";
+        resultValue.textContent = "";
+        resultValue.className = "result-value";
+      });
+
+      async function predict() {
+        if (!selectedFile) {
+          alert("Please choose an image first.");
+          return;
+        }
+
+        predictBtn.disabled = true;
+        predictBtn.textContent = "Analyzing...";
+        resultText.textContent = "Running prediction...";
+        resultValue.textContent = "";
+        resultValue.className = "result-value";
+
+        const reader = new FileReader();
+        reader.onload = async (e) => {
+          const base64 = e.target.result.split(",")[1];
+          const mediaType = selectedFile.type;
+
+          try {
+            const response = await fetch("/predict", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                image: base64,
+              }),
+            });
+
+            const result = await response.json();
+
+            resultText.textContent = result.summary;
+            resultValue.textContent =
+              result.label + " — " + result.confidence + "% confidence";
+            resultValue.className =
+              "result-value " + (result.detected ? "fire" : "no-fire");
+          } catch (err) {
+            resultText.textContent = "Error analyzing image. Please try again.";
+            resultValue.textContent = "";
+          }
+
+          predictBtn.disabled = false;
+          predictBtn.textContent = "Predict Image";
+        };
+        reader.readAsDataURL(selectedFile);
+      }
+    </script>
+  </body>
+</html>

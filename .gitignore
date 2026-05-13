@@ -21,3 +21,6 @@ assignments/**/*.pdf
 assignments/**/*.bcf
 .venv
 __pycache__
+
+*/*.keras
+*/*.pth
