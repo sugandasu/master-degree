@@ -22,5 +22,5 @@ assignments/**/*.bcf
 .venv
 __pycache__
 
-*/*.keras
-*/*.pth
+*.keras
+*.pth
