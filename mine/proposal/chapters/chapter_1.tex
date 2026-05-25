@@ -1,0 +1,36 @@
+\chapter{Pendahuluan}
+
+\section{Latar Belakang}
+Dimensi ruang, jarak objek, dan informasi 3 dimensi  merupakan informasi yang penting dalam memahami dan menjelajah dunia. 
+Untuk dapat bertahan hidup dan melakukan pekerjaan tertentu, setiap makhluk hidup memiliki turunan dari kemampuan memahami informasi tersebut. 
+Contohnya manusia yang memiliki kemampuan intrinsik memahami informasi tersebut, seperti persepsi kedalaman (depth perception), yang merupakan kemampuan bawaan yang ada dalam otak manusia.
+
+Komputer yang juga bisa “melihat” dunia menggunakan sensor kamera, namun tidak memiliki persepsi kedalaman seperti yang dilihat manusia. 
+Gambar yang didapatkan dari sensor kamera pada dasarnya hanya kumpulan piksel datar yang kehilangan informasi kedalaman (depth information). 
+Peta kedalaman (depth map) merupakan pondasi krusial dari berbagai teknologi masa depan, mulai dari navigasi kendaraan otonom, robotika, pencitraan medis, hingga pemrosesan visual pada augmented reality (AR) dan virtual reality (VR). 
+Tanpa peta kedalaman, sistem komputer tidak bisa mendeteksi rintangan dengan aman untuk menjelajahi dunia dan objek digital pada aplikasi AR tidak bisa berinteraksi secara realistis.
+
+Secara tradisional, peta kedalaman dapat diperoleh menggunakan perangkat keras khusus seperti sensor LiDAR (Light Detection and Ranging) atau sensor ToF (Time-of-Flight). 
+Namun, pendekatan berdasarkan perangkat keras ini memiliki keterbatasan besar: biaya produksi yang mahal, konsumsi daya yang tinggi, serta keterbatasan fisik (misalnya, LiDAR seringkali kesulitan mendeteksi permukaan reflektif).
+
+Sebagai alternatif, masalah persepsi kedalaman tersebut mendorong perkembangan teknik computer vision untuk melakukan rekonstruksi peta kedalaman (depth map) menggunakan data piksel yang didapatkan oleh sensor kamera. Metode tersebut dinamakan estimasi kedalaman (depth estimation). Pendekatan yang paling populer dilakukan untuk estimasi kedalaman adalah metode deep learning untuk estimasi kedalaman gambar tunggal (monocular depth estimation) menggunakan arsitektur convolutional neural network (CNN). Masalah umum yang dihasilkan oleh arsitektur CNN adalah peta kedalaman yang cenderung buram (blurry), hilangnya detail struktur pada batas objek (edge) dan gagal menangkap transisi kedalaman gambar yang ekstrem.
+
+Generative adversarial network (GAN) menawarkan pendekatan baru yang dapat diimplementasikan untuk menghasilkan peta kedalaman sebuah gambar. GAN bekerja melalui mekanisme kompetisi antara dua jaringan: Generator, yang bertugas membuat peta kedalaman serealistis mungkin menggunakan gambar tunggal, dan Diskriminator, yang bertugas membedakan antara peta kedalaman asli (dataset) dan peta kedalaman buatan generator (synthetic data). 
+
+Arsitektur adversarial tidak hanya mengandalkan metrik statistik piksel, kompetisi tersebut digunakan untuk memahami struktur global, kontur objek, dan kontinuitas spasial dari pemandangan visual. Pendekatan adversarial ini diharapkan mampu menghasilkan peta kedalaman yang jauh lebih tajam, memiliki batas objek yang jelas dan mempertahankan detail tekstur yang lebih halus dari pendekatan lainnya.
+
+\section{Rumusan Masalah}
+
+\begin{enumerate}
+    \item Bagaimana cara merancang arsitektur GAN yang mampu menghasilkan peta kedalaman gambar yang tajam, batas objek yang jelas dan mempertahankan detail tekstur yang lebih halus dari pendekatan lainnya.
+    \item Bagaimana cara membandingkan hasil penelitian sesuai dengan metrik yang menjadi standar penelitian yang sama,
+    \item Bagaimana hasil penelitian dibandingkan dengan penelitian-penelitian sebelumnya menggunakan standar metrik yang sama.
+\end{enumerate}
+
+\section{Tujuan Penelitian}
+
+\begin{enumerate}
+    \item Merancang arsitektur GAN yang mampu menghasilkan peta kedalaman gambar yang tajam, batas objek yang jelas dan mempertahankan detail tekstur yang lebih halus dari pendekatan lainnya.
+    \item Membandingkan hasil penelitian sesuai dengan metrik yang menjadi standar penelitian yang sama,
+    \item Membandingkan hasil penelitian dengan penelitian-penelitian sebelumnya menggunakan standar metrik yang sama.
+\end{enumerate}

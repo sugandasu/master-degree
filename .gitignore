@@ -24,3 +24,6 @@ __pycache__
 
 *.keras
 *.pth
+journals/review/*.pdf
+*.bcf
+*.run.xml
