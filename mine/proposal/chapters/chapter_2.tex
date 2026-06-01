@@ -3,16 +3,25 @@
 \section{Penelitian Terkait}
 
 \section{Estimasi Kedalaman}
-Estimasi kedalaman adalah salah satu bagian dari visi komputer yang bertujuan untuk memperkirakan jarak dari objek menggunakan satu atau lebih gambar~\parencite{masoumian2022monocular}.
-Kedalaman dapat diestimasi menggunakan beberapa pendekatan, yaitu estimasi kedalaman gambar tunggal (\textit{monocular depth estimation}), estimasi kedalaman binocular, dan estimasi kedalaman \textit{multi-view}~\parencite{masoumian2022monocular}.
+Estimasi kedalaman bertujuan untuk memprediksi jarak objek dari sudut pandang kamera dalam satu atau lebih gambar.
+Pendekatan yang dilakukan untuk estimasi kedalaman dapat dikategorikan sebagai berikut:
+\begin{enumerate}
+    \item \textbf{Berbasis Geometri}: 
+    \item \textbf{Berbasis Perangkat Keras}:
+    \item \textbf{Berbasis \textit{Deep Learning}}:
+\end{enumerate}
+% Estimasi kedalaman adalah salah satu bagian dari visi komputer yang bertujuan untuk memperkirakan jarak dari objek menggunakan satu atau lebih gambar~\parencite{masoumian2022monocular}.
 
-\textit{Monocular depth estimation} (MDE) melakukan estimasi kedalaman hanya dengan menggunakan satu gambar RGB, mengurangi kebutuhan data \textit{multi-view} atau perangkat keras khusus seperti kamera stereo.
-Hal ini membuat desain sistem yang lebih sederhana dan lebih murah, sehingga lebih ideal pada skenario dunia nyata dibandingkan dengan pendekatan lainnya~\parencite{zhang2025survey}.
+% Kedalaman dapat diestimasi menggunakan beberapa pendekatan, yaitu estimasi kedalaman gambar tunggal (\textit{monocular depth estimation}), estimasi kedalaman binocular, dan estimasi kedalaman \textit{multi-view}~\parencite{masoumian2022monocular}.
 
-Meskipun MDE memiliki keunngulan tersebut, MDE masih merupakan masalah yang sangat menantang, hal ini karena MDE adalah kategori masalah salah-tata (\textit{ill-posed problem}), di mana tidak ada informasi yang dapat diandalkan untuk merekonstruksi kedalaman dari gambar tunggal~\parencite{khan2020deep}.
-Hal ini akan menyebabkan hasil MDE akan menghasilkan banyak kemungkinan rekonstruksi 3D.
+% \textit{Monocular depth estimation} (MDE) melakukan estimasi kedalaman hanya dengan menggunakan satu gambar RGB, mengurangi kebutuhan data \textit{multi-view} atau perangkat keras khusus seperti kamera stereo.
+% Hal ini membuat desain sistem yang lebih sederhana dan lebih murah, sehingga lebih ideal pada skenario dunia nyata dibandingkan dengan pendekatan lainnya~\parencite{zhang2025survey}.
+
+% Meskipun MDE memiliki keunngulan tersebut, MDE masih merupakan masalah yang sangat menantang, hal ini karena MDE adalah kategori masalah salah-tata (\textit{ill-posed problem}), di mana tidak ada informasi yang dapat diandalkan untuk merekonstruksi kedalaman dari gambar tunggal~\parencite{khan2020deep}.
+
 
 \section{\textit{Deep Learning} untuk Estimasi Kedalaman}
+Estimasi kedalaman modern 
 
 \section{\textit{Generative Adversarial Networks} (GAN)}
 
@@ -20,6 +29,6 @@ Hal ini akan menyebabkan hasil MDE akan menghasilkan banyak kemungkinan rekonstr
 
 \section{KITTI \textit{Dataset}}
 
-\section{Fungsi Kerugian (\textit{Loss Function}) pada Estimasi Kedalaman)}
+\section{\textit{Loss Function} pada Estimasi Kedalaman}
 
 \section{Metrik Evaluasi Kinerja}

@@ -1,0 +1,38 @@
+\section{Analisis Masalah}
+\subsection{Rumusan Masalah}
+Beton merupakan salah satu material konstruksi paling vital dan paling banyak digunakan dalam infrastruktur modern. 
+Karakteristik paling penting yang menentukan kualitas, keamanan, dan daya tahan suatu struktur beton adalah kuat tekan (concrete compressive strength). 
+Secara konvensional, untuk menentukan kuat tekan beton, sampel fisik harus dibuat dan diuji di laboratorium menggunakan mesin tekan setelah melalui proses perawatan (curing) selama periode tertentu, umumnya 28 hari. 
+Namun, metode eksperimental ini memakan waktu lama, membutuhkan biaya material yang besar, serta tidak efisien untuk optimasi formula campuran (mix design) di lapangan.
+
+Secara teknis, kuat tekan beton adalah fungsi non-linear yang sangat kompleks. 
+Nilai ini dipengaruhi oleh interaksi kimia dan fisika yang rumit dari berbagai bahan penyusunnya—seperti semen, blast furnace slag, fly ash, air, superplasticizer, agregat kasar, agregat halus, serta faktor usia beton itu sendiri. 
+Hubungan antar-variabel ini sering kali bersifat ambigu, tidak pasti, dan sulit dimodelkan secara matematis standar.
+
+Untuk mengatasi kompleksitas tersebut, pendekatan kecerdasan buatan berbasis Neuro-Fuzzy menawarkan solusi yang adaptif. Logika Fuzzy sangat unggul dalam menangani ketidakpastian dan merepresentasikan pengetahuan pakar ke dalam aturan linguistik (If-Then Rules). 
+Namun, sistem fuzzy murni memiliki kelemahan dalam menentukan fungsi keanggotaan (membership function) secara otomatis. 
+
+Dengan mengintegrasikan Jaringan Saraf Tiruan (Neural Network), sistem Neuro-Fuzzy (seperti ANFIS) dapat mempelajari pola data dari Concrete Compressive Strength Dataset untuk menyetel parameter fuzzy secara mandiri. 
+Pendekatan hibrida ini tidak hanya menghasilkan akurasi prediksi yang tinggi, tetapi juga memberikan model yang lebih transparan dan dapat diinterpretasikan (interpretable) dibandingkan model black-box biasa.
+\subsection{Tujuan Penelitian}
+Berdasarkan latar belakang di atas, rumusan masalah dalam penelitian ini adalah:
+\begin{enumerate}
+    \item Bagaimana merancang arsitektur model Neuro-Fuzzy (ANFIS) yang optimal untuk memprediksi kuat tekan beton berdasarkan variasi fitur komposisi material dan usia beton pada dataset?
+    \item Bagaimana bentuk fungsi keanggotaan (membership function) dan aturan fuzzy (fuzzy rules) yang terbentuk secara otomatis dari proses training data komposisi beton?
+    \item Seberapa tinggi tingkat akurasi model Neuro-Fuzzy dalam mem\-pre\-dik\-si kuat tekan beton jika dievaluasi menggunakan parameter Root Mean Squared Error (RMSE) dan Koefisien Determinasi ($R^2$)?
+\end{enumerate}
+\subsection{Tujuan Penelitian}
+Tujuan yang ingin dicapai dari pelaksanaan penelitian ini adalah:
+\begin{enumerate}
+    \item Mengembangkan model prediktif berbasis Neuro-Fuzzy untuk meng\-es\-timasi nilai kuat tekan beton secara instan dan akurat berdasarkan Concrete Compressive Strength Dataset.
+    \item Mengonstruksi aturan penalaran fuzzy (fuzzy If-Then rules) se\-ca\-ra o\-to\-ma\-tis melalui kemampuan pembelajaran jaringan saraf untuk memahami interaksi antar-material beton.
+    \item Mengevaluasi performa model Neuro-Fuzzy guna memastikan mo\-del me\-mi\-li\-ki nilai kesalahan (error) minimum sehingga layak digunakan sebagai alat bantu optimasi mix design beton.
+\end{enumerate}
+\subsection{Batasan Masalah}
+Agar penelitian tetap fokus dan terarah, batasan masalah ditentukan sebagai berikut:
+\begin{enumerate}
+    \item Sumber Data: Penelitian ini menggunakan data sekunder dari Concrete Compressive Strength Dataset\cite{concrete_compressive_strength_165} (UCI Machine Learning Repository) dengan total 1.030 sampel data eksperimen.
+    \item Arsitektur Model: Metode kecerdasan buatan yang diguna\-kan di\-ba\-ta\-si pada sistem hibrida Neuro-Fuzzy (seperti arsitektur ANFIS) dengan proses pembangkitan aturan menggunakan metode Grid Partitioning atau Subclustering.
+    \item Fitur Input dan Output: Parameter input dibatasi pada 3 fitur dalam dataset (Cement, Water, Age), dan output-nya tunggal yaitu Concrete Compressive Strength (MPa).
+    \item Kondisi Lingkungan: Faktor eksternal yang ti\-dak te\-re\-kam da\-lam da\-ta\-set seperti metode pemadatan beton, variasi suhu lingkungan saat perawatan, dan fluktuasi kualitas bahan kimia dari vendor yang ber\-be\-da diabaikan dalam pemodelan ini.
+\end{enumerate}

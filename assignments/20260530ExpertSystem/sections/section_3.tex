@@ -1,0 +1,44 @@
+\section{Representati Pengetahuan}
+\subsection{Representasi Pengetahuan (Knowledge Representation)}
+Representasi pengetahuan dalam sistem \textit{Neuro-Fuzzy} memetakan ru\-ang numerik kontinu (\textit{crisp input}) dari \textit{Concrete Compressive Strength Da\-ta\-set} ke dalam himpunan fuzzy menggunakan fungsi keanggotaan (\textit{Membership Functions}). 
+Selanjutnya, hubungan antar variabel diatur menggunakan basis aturan (\textit{Rule Base}) tipe Takagi-Sugeno-Kang (TSK) Orde-1, yang sangat optimal untuk pemodelan regresi.
+
+\subsubsection{Perancangan Fungsi Keanggotaan (Membership Functions)}
+Untuk menjaga efisiensi komputasi dan menghindari fenomena \textit{ru\-le ex\-plo\-sion}, setiap variabel input linguistik dibagi menjadi 3 himpunan fuzzy utama: \textit{Low} (Rendah), \textit{Medium} (Sedang), dan \textit{High} (Tinggi). 
+Fungsi keanggotaan yang digunakan adalah kurva Gauss ($\mu(x)$) karena sifatnya yang halus (\textit{smooth}) dalam merepresentasikan transpor zat kimia beton.
+
+Fungsi keanggotaan Gauss didefinisikan melalui persamaan matematis berikut:
+\begin{equation}
+\mu_{A_i}(x) = \exp\left( -\frac{(x - c_i)^2}{2\sigma_i^2} \right)
+\end{equation}
+
+Dimana $x$ adalah nilai parameter fisik material, $c_i$ adalah titik pusat (\textit{mean}), dan $\sigma_i$ adalah lebar kurva (\textit{standard deviation}) yang parameter-parameter\-nya disesuaikan secara otomatis oleh Jaringan Saraf Tiruan me\-lalui metode \textit{backpropagation}.
+
+Pembagian semantik himpunan fuzzy pada fitur utama didefinisikan sebagai berikut:
+\begin{itemize}
+    \item \textbf{Variabel Input $x_1$ (Cement):} 
+    \begin{itemize}
+        \item $\mu_{Cement\_L}(x_1)$: Konsentrasi semen rendah (Formula beton non-struktural).
+        \item $\mu_{Cement\_M}(x_1)$: Konsentrasi semen standar (Beton normal / st\-ruk\-tural ringan).
+        \item $\mu_{Cement\_H}(x_1)$: Konsentrasi semen tinggi (Beton mutu tinggi / \textit{high-strength}).
+    \end{itemize}
+    
+    \item \textbf{Variabel Input $x_4$ (Water):}
+    \begin{itemize}
+        \item $\mu_{Water\_L}(x_4)$: Volume air minimum (Adonan kental, memerlukan \textit{superplasticizer}).
+        \item $\mu_{Water\_M}(x_4)$: Volume air standar (Tingkat kemudahan pengerjaan normal).
+        \item $\mu {Water\_H}(x_4)$: Volume air berlebih (Kandungan air ti\-nggi, be\-risiko menurunkan mutu).
+    \end{itemize}
+    
+    \item \textbf{Variabel Input $x_8$ (Age):}
+    \begin{itemize}
+        \item $\mu_{Age\_L}(x_8)$: Usia awal hidrasi ($1 - 7$ hari).
+        \item $\mu_{Age\_M}(x_8)$: Usia transisi kematangan ($14 - 21$ hari).
+        \item $\mu_{Age\_H}(x_8)$: Usia matang sempurna ($\ge 28$ hari).
+    \end{itemize}
+\end{itemize}
+
+\subsection{Perancangan Basis Aturan (Rule Base)}\label{rule_base}
+
+Perancangan basis aturan akan mengikuti aturan $M^v$ dimana setiap variabel memiliki 3 fungsi keanggotaan.
+Implementasi sistem fuzzy ini menggunakan 3 variabel sehingga jumlah basis aturan adalah $3^3 = 27$ aturan.

@@ -1,0 +1,36 @@
+\section{Akusisi Pengetahuan}
+\subsection{Sumber Pengetahuan}
+Sistem Neuro-Fuzzy membutuhkan basis pe\-nge\-tah\-uan (\textit{know\-led\-ge ba\-se}) yang kuat untuk mengonstruksi aturan penalaran (fuzzy rules). 
+Dalam penelitian ini, sumber pengetahuan diperoleh melalui \textbf{\textit{Concrete Compressive Strength Dataset}} (UCI Machine Learning Repository) yang berisi 1.030 data eksperimen laboratorium. Jaringan saraf tiruan (Neural Network) akan mempelajari pola non-linear dari data ini untuk menentukan letak fungsi keanggotaan (membership function) secara otomatis.
+\subsection{Definisi dan Spesifikasi Fitur Dataset}
+\textit{Concrete Compressive Strength Dataset} terdiri dari total 9 va\-ria\-bel nu\-me\-rik, yang terbagi menjadi 8 fitur input (variabel independen) dan sa\-tu va\-ria\-bel tar\-get (variabel dependen). 
+Dalam implementasi ini kita hanya akan menggunakan 3 variabel yang dianggap paling berpengaruh dalam menentukan kekuatan beton dan target penelitian, yaitu:
+
+\begin{enumerate}
+    \item \textbf{Cement (Semen):} 
+    Memiliki satuan $\text{kg/m}^3$ dengan jenis data kontinu. Fitur ini berperan sebagai variabel input yang merepresentasikan bahan pengikat utama dalam campuran beton. Secara umum, peningkatan volume semen berkorelasi positif terhadap peningkatan nilai kuat tekan beton.
+    
+    \item \textbf{Water (Air):} 
+    Memiliki satuan $\text{kg/m}^3$ dengan jenis data kontinu. Fitur input ini bertindak sebagai reaktan utama dalam proses hidrasi semen. Kuantitas air yang berlebihan dapat menurunkan kualitas beton karena memicu terbentuknya porositas atau rongga udara setelah beton mengering.
+    
+    \item \textbf{Age (Usia Beton):} 
+    Memiliki satuan Hari dengan jenis data diskret atau kontinu. Fitur input ini menunjukkan durasi proses hidrasi dan perawatan (\textit{curing}). Kuat tekan beton berkembang secara non-linear terhadap waktu, di mana standar pengujian kematangan struktural umumnya dilakukan pada hari ke-28.
+    
+    \item \textbf{Concrete Compressive Strength (Kuat Tekan Beton):} 
+    Memiliki satuan Mega Pascal (MPa) dengan jenis data kontinu. Variabel ini bertindak sebagai \textbf{Target (Output)} tunggal dalam pemodelan. Nilai ini menjadi representasi kekuatan mekanis akhir yang akan diestimasi oleh algoritma \textit{Neuro-Fuzzy}.
+\end{enumerate}
+
+\subsection{Karakteristik Data untuk Pemodelan Neuro-Fuzzy}
+Berdasarkan spesifikasi fitur di atas, terdapat beberapa karakteristik data utama yang menjadi landasan teoritis dalam pemodelan sistem kecerdasan buatan:
+
+\begin{itemize}
+    \item \textbf{Keseragaman Satuan Massa per Volume:} Fitur material menggunakan representasi massa per satuan volume ($\text{kg/m}^3$). 
+    Nilai ini menunjukkan proporsi riil dari setiap material penyusun yang dibutuhkan untuk menghasilkan $1\text{ m}^3$ beton. 
+    Skala numerik yang seragam ini mempermudah Jaringan Saraf Tiruan (\textit{Neural Network}) dalam mengenali pola sebaran data tanpa fluktuasi skala yang ekstrem.
+    \item \textbf{Kombinasi Non-linear Sifat Fisika dan Kimia:} Karakteristik mekanis akhir dari beton dibentuk oleh interaksi multi-variabel yang kompleks. 
+    Fitur \textit{Cement} berperan sebagai komponen pengikat (\textit{cementitious}), fitur \textit{Water} mengontrol tingkat cairan dan konsistensi adonan, yang kemudian dipengaruhi oleh dimensi waktu non-linear pada fitur \textit{Age}.
+    \item \textbf{Tantangan Pemodelan Regresi:} Nilai ku\-at te\-kan be\-ton ti\-dak da\-pat di\-asum\-si\-kan secara linear melalui penjumlahan para\-me\-ter in\-put. 
+    Sebagai contoh, peningkatan kadar \textit{Water} justru akan menurunkan nilai \textit{Concrete Compressive Strength} jika tidak diimbangi dengan rasio \textit{Cement} yang tepat. 
+    Kompleksitas hubungan non-linear inilah yang mendasari penggunaan metode hibrida \textit{Neuro-Fuzzy} (seperti arsitektur ANFIS). 
+    Sistem ini mampu memetakan ruang input multivariabel ke dalam fungsi keanggotaan fuzzy (\textit{membership functions}) seperti kurva Gauss atau Segitiga secara adaptif melalui proses pembelajaran data.
+\end{itemize}
